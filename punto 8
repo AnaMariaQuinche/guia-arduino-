@@ -1,0 +1,24 @@
+const int pinPotenciometro = A0; 
+constante int pinLED = 8;
+constante int umbral = 4; 
+
+configuración vacía() {
+
+  pinMode(pinLED, SALIDA);
+  Serie.begin(9600);
+}
+
+bucle vacío() {
+ 
+  int valorAnalógico = analogRead(pinPotenciometro);
+  Serial.print("Valor del Potenciómetro: ");
+  Serial.println(valorAnalogico);
+
+  
+  si (valor Analógico < umbral) {
+    digitalWrite(pinLED, ALTO);
+  } demás {
+    digitalWrite(pinLED, BAJO);
+  }
+  retraso(100);
+}
