@@ -8,12 +8,12 @@ void setup() {
 }
 
 void loop() {
-  int gasLevel = analogRead(pin_sensor); 
+  int nivelgas = analogRead(pin_sensor); 
   Serial.print("Nivel de gas: ");
-  Serial.println(gasLevel); 
+  Serial.println(nivelgas); 
 
-  if (gasLevel > THRESHOLD) {
-    int speakerVolume = map(gasLevel, THRESHOLD, 1023, 0, 255); 
+  if (nivelgas > THRESHOLD) {
+    int speakerVolume = map(nivelgas, THRESHOLD, 1023, 0, 255); 
     analogWrite(pin_bocina, speakerVolume); 
     Serial.println("Alerta");
   } else {
